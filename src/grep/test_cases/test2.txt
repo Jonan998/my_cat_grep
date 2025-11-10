@@ -1,0 +1,46 @@
+[2023-11-15 08:12:45] INFO [MainThread] Application started successfully. Version: 2.3.4
+[2023-11-15 08:12:46] DEBUG [Thread-1] Initializing database connection to jdbc:mysql://localhost:3306/app_db
+[2023-11-15 08:12:47] INFO [Thread-1] Database connection established. Connection ID: 42
+[2023-11-15 08:13:02] WARNING [Scheduler] High CPU usage detected: 87%
+[2023-11-15 08:13:15] INFO [API-Thread] Received request GET /api/v1/users from 192.168.1.45
+[2023-11-15 08:13:16] DEBUG [API-Thread] Query executed: SELECT * FROM users WHERE status = 'active' LIMIT 100
+[2023-11-15 08:13:16] INFO [API-Thread] Response sent: 200 OK, size: 45.2KB
+[2023-11-15 08:14:22] ERROR [Worker-3] Failed to process task #4721. Exception: NullPointerException at com.example.Service.process(Service.java:124)
+[2023-11-15 08:14:22] DEBUG [Worker-3] Stack trace: 
+    at com.example.Service.process(Service.java:124)
+    at com.example.Worker.run(Worker.java:87)
+    at java.lang.Thread.run(Thread.java:748)
+[2023-11-15 08:15:01] INFO [Maintenance] Starting nightly backup procedure
+[2023-11-15 08:15:33] INFO [Maintenance] Backup completed. Size: 2.4GB, Duration: 32s
+[2023-11-15 08:16:45] INFO [API-Thread] Received request POST /api/v1/orders from 10.0.0.12
+[2023-11-15 08:16:46] DEBUG [API-Thread] Request payload: {"userId": 42, "items": [{"id": 101, "qty": 2}, {"id": 205, "qty": 1}]}
+[2023-11-15 08:16:48] INFO [API-Thread] Order created. ID: 892374, Total: $156.78
+[2023-11-15 08:16:48] INFO [API-Thread] Response sent: 201 Created, size: 1.2KB
+[2023-11-15 08:17:12] WARNING [HealthCheck] Memory usage approaching threshold: 85% of 8GB
+[2023-11-15 08:18:03] INFO [BatchProcessor] Started processing batch #312 with 1245 records
+[2023-11-15 08:18:45] INFO [BatchProcessor] Batch #312 processed successfully. 1245 records updated. Duration: 42s
+[2023-11-15 08:19:22] ERROR [EmailService] Failed to send email to user@example.com. SMTP error: Connection timed out
+[2023-11-15 08:20:15] INFO [API-Thread] Received request DELETE /api/v1/users/78 from 192.168.1.45
+[2023-11-15 08:20:16] WARNING [API-Thread] User deletion requested for active user ID 78
+[2023-11-15 08:20:18] INFO [API-Thread] User 78 deleted. Backup saved to /backups/users/78_20231115.json
+[2023-11-15 08:21:33] DEBUG [CacheManager] Cache miss for key: user_profile_892
+[2023-11-15 08:21:34] DEBUG [CacheManager] Loaded data for key: user_profile_892 from database
+[2023-11-15 08:22:45] INFO [SystemMonitor] Current stats: CPU: 62%, Memory: 4.2GB/8GB, Disk: 45% used
+[2023-11-15 08:23:01] INFO [Scheduler] Running scheduled job: clean_temp_files
+[2023-11-15 08:23:07] INFO [Scheduler] Deleted 124 temporary files. Freed 245MB of space.
+[2023-11-15 08:24:12] CRITICAL [DatabaseWatchdog] Replication lag detected: 12.4s (threshold: 10s)
+[2023-11-15 08:24:45] INFO [DatabaseWatchdog] Replication lag resolved. Current lag: 1.2s
+[2023-11-15 08:25:33] INFO [API-Thread] Received request PUT /api/v1/products/56 from 10.0.0.18
+[2023-11-15 08:25:34] DEBUG [API-Thread] Request payload: {"price": 49.99, "stock": 124}
+[2023-11-15 08:25:35] INFO [API-Thread] Product 56 updated successfully
+[2023-11-15 08:25:35] INFO [API-Thread] Response sent: 200 OK, size: 0.8KB
+[2023-11-15 08:26:18] ERROR [PaymentGateway] Failed to charge card ending 4242. Error: Insufficient funds
+[2023-11-15 08:27:45] INFO [NotificationService] Sent push notification to device ID: xyz123. Status: delivered
+[2023-11-15 08:28:33] WARNING [APM] Slow query detected: 2.4s. Query: SELECT * FROM orders WHERE created_at > '2023-11-01' ORDER BY total DESC
+[2023-11-15 08:29:01] INFO [BackupService] Starting incremental backup
+[2023-11-15 08:29:45] INFO [BackupService] Incremental backup completed. Size: 345MB, Duration: 44s
+[2023-11-15 08:30:12] INFO [System] Shutdown initiated by admin
+[2023-11-15 08:30:13] INFO [MainThread] Closing database connections
+[2023-11-15 08:30:14] INFO [MainThread] All resources released
+[2023-11-15 08:30:15] INFO [MainThread] Application shutdown completed
+
