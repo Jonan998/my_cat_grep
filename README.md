@@ -1,2 +1,4 @@
-# my_cat_grep
-my_cat_my_grep
+# Simple Bash Utils
+
+Development of Bash text utilities: cat, grep.
+

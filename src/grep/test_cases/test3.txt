@@ -1,0 +1,33 @@
+==12345== LEAK SUMMARY:
+==12345==    definitely lost: 512 bytes in 4 blocks
+==12345==    indirectly lost: 256 bytes in 2 blocks
+==12345==    possibly lost: 128 bytes in 1 blocks
+==12345==    still reachable: 1,024 bytes in 8 blocks
+==12345==    suppressed: 0 bytes in 0 blocks
+==12345== 
+==12345== ERROR SUMMARY: 5 errors from 5 contexts
+==12345== 512 bytes in 4 blocks are definitely lost in loss record 1 of 4
+==12345==    at 0xABCDEF: malloc (malloc.c:123)
+==12345==    by 0x123456: create_buffer (example.c:42)
+==12345==    by 0x789ABC: main (main.c:15)
+==12345== 256 bytes in 2 blocks are indirectly lost in loss record 2 of 4
+==12345==    at 0xABCDEF: malloc (malloc.c:123)
+==12345==    by 0x234567: init_data (data.c:30)
+==12345==    by 0x789ABC: main (main.c:20)
+==12345== 128 bytes in 1 blocks are possibly lost in loss record 3 of 4
+==12345==    at 0xABCDEF: realloc (realloc.c:456)
+==12345==    by 0x345678: resize_array (array.c:75)
+==12345==    by 0x789ABC: main (main.c:25)
+==12345== Invalid read of size 4
+==12345==    at 0x456789: process_data (process.c:50)
+==12345==    by 0x789ABC: main (main.c:30)
+==12345==  Address 0xDEFABC is 8 bytes inside a block of size 32 free'd
+==12345==    at 0xABCDEF: free (free.c:123)
+==12345==    by 0x567890: cleanup (cleanup.c:20)
+==12345==    by 0x789ABC: main (main.c:28)
+==12345== Heap buffer overflow detected at 0x123456
+==12345==    at 0x678901: fill_buffer (buffer.c:60)
+==12345==    by 0x789ABC: main (main.c:35)
+==12345==  Write of size 8 to region of size 16
+==12345==    allocated at 0xABCDEF: malloc (malloc.c:123)
+==12345==    by 0x678901: fill_buffer (buffer.c:55)
